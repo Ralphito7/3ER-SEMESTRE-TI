@@ -1,0 +1,50 @@
+using System;
+
+namespace RegistroEstudiantes
+{
+    // Clase que representa a un estudiante
+    public class Estudiante
+    {
+        // Atributos del estudiante
+        public int Id;
+        public string Nombres;
+        public string Apellidos;
+        public string Direccion;
+        public string[] Telefonos = new string[3]; // Array para almacenar 3 teléfonos
+
+        // Método para mostrar información del estudiante
+        public void MostrarInformacion()
+        {
+            Console.WriteLine("ID: " + Id);
+            Console.WriteLine("Nombres: " + Nombres);
+            Console.WriteLine("Apellidos: " + Apellidos);
+            Console.WriteLine("Dirección: " + Direccion);
+            Console.WriteLine("Teléfonos:");
+            for (int i = 0; i < Telefonos.Length; i++)
+            {
+                Console.WriteLine($"  Teléfono {i + 1}: {Telefonos[i]}");
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Crear una instancia de la clase Estudiante
+            Estudiante estudiante1 = new Estudiante();
+
+            // Asignar valores
+            estudiante1.Id = 101;
+            estudiante1.Nombres = "Juan";
+            estudiante1.Apellidos = "Pérez";
+            estudiante1.Direccion = "Av. Central y Calle 10";
+            estudiante1.Telefonos[0] = "099999999";
+            estudiante1.Telefonos[1] = "098888888";
+            estudiante1.Telefonos[2] = "097777777";
+
+            // Mostrar la información
+            estudiante1.MostrarInformacion();
+        }
+    }
+}
