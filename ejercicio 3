@@ -1,0 +1,10 @@
+# Crear una lista con el abecedario
+abecedario = list("abcdefghijklmnopqrstuvwxyz")
+
+# Eliminar las letras en posiciones múltiplos de 3 (1-based index)
+# Usamos enumerate para acceder al índice (0-based) y la letra
+resultado = [letra for i, letra in enumerate(abecedario, start=1) if i % 3 != 0]
+
+# Mostrar la lista resultante
+print("Abecedario sin letras en posiciones múltiplos de 3:")
+print(resultado)
