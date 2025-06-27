@@ -1,0 +1,18 @@
+# Lista de asignaturas de la carrera Ingeniería en Tecnologías de la Información
+asignaturas = [
+    "Programación I",
+    "Estructura de Datos",
+    "Bases de Datos",
+    "Redes de Computadoras",
+    "Sistemas Operativos",
+    "Ingeniería de Software",
+    "Ciberseguridad",
+    "Inteligencia Artificial",
+    "Desarrollo Web",
+    "Arquitectura de Computadoras"
+]
+
+# Mostrar las asignaturas por pantalla
+print("Asignaturas del curso de Ingeniería en Tecnologías de la Información:")
+for asignatura in asignaturas:
+    print("-", asignatura)
