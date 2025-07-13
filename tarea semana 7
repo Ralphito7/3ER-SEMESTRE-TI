@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+
+Public class ParentesisBalanceados
+{
+    Public class bool ParentesisBalanceados
+    {
+        Stack<char> pila = new Stack<char>();
+        Foreach (char c in expresion)
+        {
+           If (c== '('|| c == '['|| c == '{')
+            {   
+                pila.Push(c);
+            }
+            else if (c == '(' || c == '['|| c == '{')
+            {
+                if (pila.Count == 0
+                {
+                    return false; // No hay dato que coincida
+                }
+                Char top = pila.Pop();
+
+                If ((c ==’)’&& top !=’(‘)||
+                   ((c ==’]’&& top !=’[‘)||
+                   ((c ==’}’&& top !=’{‘)
+                {
+                   return false; // No coinciden
+                 }
+              }
+          }
+
+        return pila.Count == 0;// La ppila debe estar vacia al final
+    }
+    
+    public static void Main(string[]args)
+    {
+        string expresion = "{7 + (8 * 5) - [(9 - 7) + (4 + 1)]}";
+        Bool balanceada = Esta balanceada (expresion);
+
+        If (balanceada)
+       {
+        Console.WriteLine(“Formula balanceada.”);
+       }
+        Else
+        {
+        Console.WriteLine(“Formula no balanceada.”);
+        }
+      }
+    }
