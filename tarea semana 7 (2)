@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+
+Public class TorresDeHanoi
+}
+   Public static void Resolver TorresDeHanoi(int n, Stack<int>origen, Stack<int> auxiliaar)
+   {
+       If (n > 0)
+       {
+          //Mover el disco n de origen a auxiliar
+          Resolver /torresDeHanoi(n-1, origen, auxiliar, destino);
+
+          //Mover el disco n de origen a destino
+          Int disco = origen.Pop();
+          Destino.Push(disco);
+          Console.WriteLibe($’Mover disco{disco} de {
