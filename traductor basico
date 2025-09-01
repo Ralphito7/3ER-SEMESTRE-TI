@@ -1,0 +1,94 @@
+class Traducir
+{
+    static void Main()
+    {
+        Dictionary<string, string> diccionario = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+{
+    {"tiempo", "time"},
+    {"persona", "person"},
+    {"año", "year"},
+    {"camino", "way"},
+    {"día", "day"},
+    {"cosa", "thing"},
+    {"hombre", "man"},
+    {"mundo", "world"},
+    {"vida", "life"},
+    {"mano", "hand"},
+    {"parte", "part"},
+    {"niño", "child"},
+    {"ojo", "eye"},
+    {"mujer", "woman"},
+    {"lugar", "place"},
+    {"trabajo", "work"},
+    {"semana", "week"},
+    {"caso", "case"},
+    {"punto", "point"},
+    {"gobierno", "government"},
+    {"empresa", "company"}
+};
+
+        
+        
+       
+
+        int opcion;
+        do
+        {
+            Console.WriteLine("\n----------MENU---------------");
+            Console.WriteLine("1. Traducir una frase");
+            Console.WriteLine("2. Agregar palabra");
+            Console.WriteLine("0. Salir");
+            Console.Write("Opción: ");
+
+            if (!int.TryParse(Console.ReadLine(), out opcion))
+            {
+                Console.WriteLine("Entrada inválida.");
+                continue;
+            }
+
+            switch (opcion)
+            {
+                case 1:
+                    Console.Write("\nIngrese la frase: ");
+                    string frase = Console.ReadLine();
+                    string[] palabras = frase.Split(' ');
+
+                    for (int i = 0; i < palabras.Length; i++)
+                    {
+                        string limpia = palabras[i].Trim('.', ',', ';', '!', '?').ToLower();
+                        if (diccionario.ContainsKey(limpia))
+                        {
+                            palabras[i] = palabras[i].Replace(limpia, diccionario[limpia]);
+                        }
+                    }
+
+                    Console.WriteLine("Traducción: " + string.Join(" ", palabras));
+                    break;
+
+                case 2:
+                    Console.Write("\nPalabra en español: ");
+                    string esp = Console.ReadLine().ToLower();
+
+                    Console.Write("Traducción en inglés: ");
+                    string eng = Console.ReadLine().ToLower();
+
+                    if (!diccionario.ContainsKey(esp))
+                    {
+                        diccionario.Add(esp, eng);
+                        Console.WriteLine($"Guardaste la palabra {esp} === {eng}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("La palabra ya existe.");
+                    }
+                    break;
+
+                case 0:
+                    Console.WriteLine("Fin del programa.");
+                    break;
+
+            }
+
+        } while (opcion != 0);
+    }
+}
